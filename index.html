@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <HTML>
 	<Head>
-					<script src = "scripts/main.js"> </script>
-					<link href = "styles/Style.css" rel = "stylesheet">
-					<Title> Weatherman </Title>
+					<!-- <script src = "scripts/main.js"> </script>
+					<link href = "styles/Style.css" rel = "stylesheet"> -->
+					<Title> Snapool </Title>
 		<BR> <BR> <BR>
 	</Head>
 	<Header onload>
 
 	</Header>
 	<Body>
-      <div id="my-login-button-target" />
+      <div id = "my-login-button-target"/>
+      <script>
+      window.snapKitInit = function () {
+       var loginButtonIconId = 'my-login-button-target';
+       // Mount Login Button
+       snap.loginkit.mountButton(loginButtonIconId, {
+         clientId: '88570a56-5e3d-46b5-98ee-8b9ba110aa23',
+         redirectURI: 'your-redirectURI',
+         scopeList: [
+           'user.display_name',
+           'user.bitmoji.avatar',
+         ],
+         handleResponseCallback: function() {
+           snap.loginkit.fetchUserInfo()
+             .then(data => console.log('User info:', data));
+         },
+       });
+     };
+      // Load the SDK asynchronously
+      (function (d, s, id) {
+        var js, sjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://sdk.snapkit.com/js/v1/login.js";
+        sjs.parentNode.insertBefore(js, sjs);
+      }(document, 'script', 'loginkit-sdk'));
+
+    </script>
 	</Body>
 </HTML>
