@@ -16,8 +16,8 @@
        var loginButtonIconId = 'my-login-button-target';
        // Mount Login Button
        snap.loginkit.mountButton(loginButtonIconId, {
-         clientId: '88570a56-5e3d-46b5-98ee-8b9ba110aa23',
-         redirectURI: 'your-redirectURI',
+         clientId: '6b8715d4-74b2-4f86-8c35-47c01543aefa',
+         redirectURI: '',
          scopeList: [
            'user.display_name',
            'user.bitmoji.avatar',
@@ -39,4 +39,17 @@
 
     </script>
 	</Body>
+  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD6ZvvOIDwO24yE71QyxXps0wpn-6QHv4U",
+    authDomain: "friendlyeats-35bac.firebaseapp.com",
+    databaseURL: "https://friendlyeats-35bac.firebaseio.com",
+    projectId: "friendlyeats-35bac",
+    storageBucket: "",
+    messagingSenderId: "230537466407"
+  };
+  firebase.initializeApp(config);
+</script>
 </HTML>
