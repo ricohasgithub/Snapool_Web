@@ -13,8 +13,6 @@ var loginParamsObj = {
   scopeList: ['your-scope(s)'], // REMOVE THIS
 };
 
-
-
 // Cryptography
 
 var _crypto = require('crypto');
@@ -41,3 +39,13 @@ var generateClientState = exports.generateClientState = function generateClientS
     generateRandomBytes(OAUTH2_STATE_BYTES)
   );
 };
+
+// Hamilton Open Data Path Builder
+function buildOpenHamPath () {
+  return "https://opendata.arcgis.com/datasets/d56d996d4725499da2a5555aa5e5b651_5.geojson";
+}
+
+// Google Maps API Path Builder
+function buildGoogleMapsPath () {
+  return "https://maps.googleapis.com/maps/api/js?key=AIzaSyALHXXP3dCiXonCzhlfIwhILPbpFAmfQE4&callback=initMap";
+}
