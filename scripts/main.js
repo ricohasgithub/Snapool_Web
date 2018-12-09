@@ -108,7 +108,6 @@ function addLayerToMap (type) {
     // Case 4 - Show Friends on Map
     // TODO: Set Bitmojis as points
     map.data.addGeoJson(FGeoJSON);
-    map.data.setStyle();
   }
 
 }
