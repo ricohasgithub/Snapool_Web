@@ -36,10 +36,10 @@ function addLayerToMap (type) {
   }
 
 }
-
-function  () {
-
-}
+//
+// function  () {
+//
+// }
 
 // Hamilton Open Data Path Builder for SoBi Hubs (GeoJSON)
 function buildOpenHamSoBiHubsPath () {
