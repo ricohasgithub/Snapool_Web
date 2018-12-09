@@ -1,14 +1,40 @@
 
-var request = new XMLHttpRequest();
-var path = buildGoogleMapsPath();
+var path = "";
 
-request.open('GET', path, true);
+// request.open('GET', path, true);
 
-function displayMap () {
-  var map = new google.maps.Map(document.getElementById("map")
-}
+var showParking = false;
+var showBikeways = false;
+var showSoBiHubs = false;
 
-function addLayer () {
+function addLayerToMap (type) {
+
+  // Flip the boolean value of the path
+  if (type === 1) {
+    showParking = !showParking;
+  } else if (type === 2) {
+    showBikeways = !showBikeways;
+  } else if (type === 3) {
+    showSoBiHubs = !showSoBiHubs;
+  }
+
+  if (showParking === true) {
+    // Case 1 - Add Parking lyer
+    path = buildOpenHamParkingPath();
+    map.data.loadGeoJson(path);
+  }
+
+  if (showBikeways === true) {
+    // Case 2 - Add Bike Paths Layer
+    path = buildOpenHamBikewayPath();
+    map.data.loadGeoJson(path);
+  }
+
+  if (showSoBiHubs === true) {
+    // Case 3 - Add Social Bike Hubs Layer
+    path = buildOpenHamSoBiHubsPath();
+    map.data.loadGeoJson(path);
+  }
 
 }
 
