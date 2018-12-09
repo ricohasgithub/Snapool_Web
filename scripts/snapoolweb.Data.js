@@ -1,3 +1,4 @@
+
 'use strict';
 
 snapoolweb.prototype.addUser = function(data) {
@@ -5,10 +6,23 @@ snapoolweb.prototype.addUser = function(data) {
   return collection.add(data);
 };
 
+snapoolweb.prototype.getUser = function(id) {
+  return firebase.firestore().collection('user').doc(id).get();
+};
+
+snapoolweb.prototype.getUsername = function(id) {
+  return firebase.firestore().collection('user').doc(id).get('username');
+};
+
+snapoolweb.prototype.getFriends = function(id) {
+  return firebase.firestore().collection('user').dic(id).get('friends');
+};
+
 snapoolweb.prototype.addUsernameToUser = function(id) {
   var user = firebase.firestore().collection('user');
-  user.doc('username').set({
+  user.doc().set({
     username: id
+
   });
 };
 
