@@ -8,7 +8,6 @@ var showBikeways = false;
 var showSoBiHubs = false;
 
 function addLayerToMap (type) {
-
   // Flip the boolean value of the path
   if (type === 1) {
     showParking = !showParking;

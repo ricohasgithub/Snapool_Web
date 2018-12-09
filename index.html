@@ -9,7 +9,24 @@
 
 	</Header>
 	<Body>
-    <div id="map"></div>
+
+    <nav>
+        <img src = "images/SnapoolLogo.png" height = "101" width = "101" align = "left">
+        <button class="button sq"> Log in </button>
+        <button class="button" onclick="addLayerToMap(1);"> Show Parking </button>
+        <button class="button" onclick="addLayerToMap(2);"> Show Bikeways </button>
+        <button class="button" onclick="addLayerToMap(3);"> Show SoBi Hubs </button>
+				<div id = "friends"> </div>
+        <div id="about">
+            <center>
+            <p> <B>Snapool</B> is the perfect app for commuters. It is a carpool app that
+            connects peopple through Snapchat. </p>
+            <img src = "images/SnapchatGhost.png" height = "110" width = "100">
+            </center>
+        </div>
+	  </nav>
+
+    <div id = "map"> </div>
     <script>
       var map;
       function initMap() {
@@ -21,9 +38,6 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALHXXP3dCiXonCzhlfIwhILPbpFAmfQE4&callback=initMap"
     async defer></script>
-    <button onclick="addLayerToMap(1);"> Show Parking </button>
-    <button onclick="addLayerToMap(2);"> Show Bikeways </button>
-    <button onclick="addLayerToMap(3);"> Show SoBi Hubs </button>
       <!-- <div id = "my-login-button-target"/>
       <script>
       window.snapKitInit = function () {
