@@ -10,6 +10,10 @@ Snapool_Web.prototype.getUser = function(id) {
   return firebase.firestore().collection('user').doc(id).get();
 };
 
+Snapool_Web.prototype.getGeoPoint = function(id) {
+  return firebase.firestore().collection('user').doc(id).get('pickup');
+};
+
 Snapool_Web.prototype.getUsername = function(id) {
   return firebase.firestore().collection('user').doc(id).get('username');
 };

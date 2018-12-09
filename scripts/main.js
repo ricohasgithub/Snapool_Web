@@ -4,6 +4,7 @@ var path = "";
 var showParking = false;
 var showBikeways = false;
 var showSoBiHubs = false;
+var showFriends = false;
 
 function addLayerToMap (type) {
   // Flip the boolean value of the path
@@ -13,6 +14,8 @@ function addLayerToMap (type) {
     showBikeways = !showBikeways;
   } else if (type === 3) {
     showSoBiHubs = !showSoBiHubs;
+  } else if (type === 4) {
+    showFriends = !showFriends;
   }
 
   if (showParking === true) {
@@ -33,12 +36,31 @@ function addLayerToMap (type) {
     map.data.loadGeoJson(path);
   }
 
+  if (showFriends === true) {
+    // Case 4 - Show Friends on Map
+    // TODO: Set Bitmojis as points
+    map.data.addGeoJson(getFriendsLayer());
+  }
+
 }
 
-function getRedirectURI () {
-  var request = new XMLHttpRequest();
-  var reqPath = 'https://accounts.snapchat.com/accounts//token';
-  request.send();
+// This function builds and returns a .geojson file from your friend's geopoints
+function getFriendsLayer () {
+
+  var GeoJSON = require('geojson');
+  var data = buildDataFiles();
+  return GeoJSON.parse(data, {Point: ['lat', 'lng'], include: ['name']});
+
+}
+
+// This method builds a data array and returns it
+function buildDataFiles () {
+  var data = [
+  { name: 'SmYung', category: 'Store', street: 'Market', lat: 42.284, lng: -79.843 },
+  { name: 'John', category: 'House', street: 'Broad', lat: 42.124, lng: -79.633 },
+  { name: 'Alex', category: 'Office', street: 'South', lat: 42.123, lng: -79.034 }
+  ];
+  return data;
 }
 
 // Hamilton Open Data Path Builder for SoBi Hubs (GeoJSON)
@@ -60,30 +82,3 @@ function buildOpenHamParkingPath () {
 function buildGoogleMapsPath () {
   return "https://maps.googleapis.com/maps/api/js?key=AIzaSyALHXXP3dCiXonCzhlfIwhILPbpFAmfQE4&callback=initMap";
 }
-
-// Cryptography
-
-var _crypto = require('crypto');
-
-var OAUTH2_STATE_BYTES = 32;
-var REGEX_PLUS_SIGN = /\+/g;
-var REGEX_FORWARD_SLASH = /\//g;
-var REGEX_EQUALS_SIGN = /=/g;
-
-var generateRandomBytes = function generateRandomBytes(size) {
-  return _crypto.randomBytes(size);
-};
-
-var generateBase64UrlEncodedString = function generateBase64UrlEncodedString(bytesToEncode) {
-  return bytesToEncode
-    .toString('base64')
-    .replace(REGEX_PLUS_SIGN, '-')
-    .replace(REGEX_FORWARD_SLASH, '_')
-    .replace(REGEX_EQUALS_SIGN, '');
-};
-
-var generateClientState = exports.generateClientState = function generateClientState() {
-  return generateBase64UrlEncodedString(
-    generateRandomBytes(OAUTH2_STATE_BYTES)
-  );
-};
