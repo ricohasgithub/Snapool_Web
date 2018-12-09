@@ -1,10 +1,68 @@
 
 var path = "";
 
+var FGroJSON = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "SunY",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.91128921508789,
+          43.258455839234294
+        ]
+      }
+    },
+    {
+      "type": "Kevin",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.85034942626953,
+          43.257205668363206
+        ]
+      }
+    },
+    {
+      "type": "Alex",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.86185073852539,
+          43.272924698999574
+        ]
+      }
+    },
+    {
+      "type": "Sarah",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.86571311950684,
+          43.26070608211925
+        ]
+      }
+    },
+    {
+      "type": "Andrew",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.87197875976562,
+          43.26208118960853
+        ]
+      }
+    }
+  ]
+};
+
 var scConnected = false;
-
-var geoJSONFL = document.getElementById("FGeoJSON");
-
 var showParking = false;
 var showBikeways = false;
 var showSoBiHubs = false;
@@ -13,9 +71,9 @@ var showFriends = false;
 function addLayerToMap (type) {
 
   // Check to see if the user had connected to snapchat
-  if (type === 4 && scConnected === false) {
-    window.alert("Please Connect to Snapchat First!");
-  }
+  // if (type === 4 && scConnected === false) {
+  //   window.alert("Please Connect to Snapchat First!");
+  // }
 
   // Flip the boolean value of the path
   if (type === 1) {
@@ -24,8 +82,8 @@ function addLayerToMap (type) {
     showBikeways = !showBikeways;
   } else if (type === 3) {
     showSoBiHubs = !showSoBiHubs;
-  } else if (type === 4) {
-    showFriends = !showFriends;
+  // } else if (type === 4) {
+  //   showFriends = !showFriends;
   }
 
   if (showParking === true) {
@@ -49,7 +107,7 @@ function addLayerToMap (type) {
   if (showFriends === true) {
     // Case 4 - Show Friends on Map
     // TODO: Set Bitmojis as points
-    map.data.addGeoJson(geoJSONFL);
+    map.data.addGeoJson(FGeoJSON);
   }
 
 }

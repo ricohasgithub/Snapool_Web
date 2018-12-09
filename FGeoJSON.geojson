@@ -1,0 +1,60 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "SunY",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.91128921508789,
+          43.258455839234294
+        ]
+      }
+    },
+    {
+      "type": "Kevin",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.85034942626953,
+          43.257205668363206
+        ]
+      }
+    },
+    {
+      "type": "Alex",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.86185073852539,
+          43.272924698999574
+        ]
+      }
+    },
+    {
+      "type": "Sarah",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.86571311950684,
+          43.26070608211925
+        ]
+      }
+    },
+    {
+      "type": "Andrew",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.87197875976562,
+          43.26208118960853
+        ]
+      }
+    }
+  ]
+}

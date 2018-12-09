@@ -1,5 +1,7 @@
   #map {
     height: 100%;
+    margin-bottom: 0px;
+    margin-right: 0px;
   } #my-login-button-target {
     width: 150px;
   }
@@ -8,6 +10,7 @@
     margin-top: 0px;
     margin-bottom: 0px;
     margin-left: 0px;
+    margin-right: 0px;
     padding: 0;
   } nav {
     float: left;
