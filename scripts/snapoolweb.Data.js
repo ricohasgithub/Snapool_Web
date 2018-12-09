@@ -5,10 +5,11 @@ snapoolweb.prototype.addUser = function(data) {
   return collection.add(data);
 };
 
-snapoolweb.prototype.addUsername = function(id) {
-  var collection = firebase.firestore().collection('user');
-  var user = collection.doc();
-  
+snapoolweb.prototype.addUsernameToUser = function(id) {
+  var user = firebase.firestore().collection('user');
+  user.doc('username').set({
+    username: id
+  });
 };
 
 snapoolweb.prototype.addUserFriends = function(id, data) {

@@ -1,4 +1,12 @@
 
+'use strict';
+
+// Constructor
+function snapoolweb () {
+
+}
+
+
 const firebase = require("firebase");
 // Required for side-effects
 require("firebase/firestore");
@@ -30,3 +38,7 @@ function addUser (userId, friendsArray, reqArray) {
       console.error("Error adding document: ", error);
   });
 }
+
+window.onload = function() {
+  window.app = new snapoolweb();
+};
