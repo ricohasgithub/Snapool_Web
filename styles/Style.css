@@ -11,13 +11,13 @@
     padding: 0;
   } nav {
     float: left;
-    max-width: 200px;
+    max-width: 250px;
     font-family: 'Roboto', sans-serif;
   } ul {
         list-style-type: none;
         margin: 0px;
         padding: 0px;
-        width: 200px;
+        width: 250px;
         background-color: rgb(235,235,235);
   } li a {
         display: block;
@@ -29,7 +29,7 @@
         background-color: black;
         border: 1px solid black;
         color: white;
-        padding: 10px 50px;
+        padding: 10px 75px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
@@ -41,12 +41,17 @@
         color: black;
         background-color: white;
   } .sq  {
-        border: 2px solid yellow;
+        border: 2px solid white;
         float: right;
-        color:white;
-        background-color: yellow;
-        font-size: 16px;
-        padding: 40px 25px;
+        color:black;
+        background-color: white;
+        font-size: 20px;
+        padding: 40px 35px;
+
+  } .sq:hover {
+      border-color: black;
+      color: white;
+      background-color: black;
   } #about {
         margin-left: 25px;
         margin-right: 20px;
