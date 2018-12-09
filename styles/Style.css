@@ -1,5 +1,7 @@
   #map {
     height: 100%;
+  } #my-login-button-target {
+    width: 150px;
   }
   html, body {
     height: 100%;

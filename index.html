@@ -1,5 +1,20 @@
 <!DOCTYPE html>
 <HTML>
+
+  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA3U4uDMhOJf7e-HzAowbkV_z0ziJqzS9c",
+    authDomain: "snapoolweb.firebaseapp.com",
+    databaseURL: "https://snapoolweb.firebaseio.com",
+    projectId: "snapoolweb",
+    storageBucket: "snapoolweb.appspot.com",
+    messagingSenderId: "531715796548"
+  };
+  firebase.initializeApp(config);
+</script>
+
 	<Head>
 					<script src = "scripts/main.js"> </script>
 					<link href = "styles/Style.css" rel = "stylesheet">
@@ -11,8 +26,12 @@
 	<Body>
 
     <nav>
-        <img src = "images/SnapoolLogo.png" height = "102" width = "102" align = "left">
-        <button class="button sq"> Log in </button>
+        <img src = "images/SnapoolLogo2.png" height = "102" width = "102" align = "left">
+
+        <div id="log-in">
+          <button class="button sq"> Log in </button>
+        </div>
+
         <button class="button" onclick="addLayerToMap(1);"> Show Parking </button>
         <button class="button" onclick="addLayerToMap(2);"> Show Bikeways </button>
         <button class="button" onclick="addLayerToMap(3);"> Show SoBi Hubs </button>
