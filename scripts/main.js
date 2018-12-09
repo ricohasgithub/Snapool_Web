@@ -1,8 +1,6 @@
 
 var path = "";
 
-// request.open('GET', path, true);
-
 var showParking = false;
 var showBikeways = false;
 var showSoBiHubs = false;
@@ -36,10 +34,14 @@ function addLayerToMap (type) {
   }
 
 }
-//
-// function  () {
-//
-// }
+
+getRealTimeUpdates = function () {
+  docRef.onSnapshot(function (doc) {
+    if (doc && doc.exists) {
+      const myData = doc.data();
+    }
+  })
+}
 
 // Hamilton Open Data Path Builder for SoBi Hubs (GeoJSON)
 function buildOpenHamSoBiHubsPath () {
