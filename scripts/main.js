@@ -1,13 +1,11 @@
 
 var request = new XMLHttpRequest();
-var path = buildPathCity(city);
+var path = buildGoogleMapsPath();
 
 request.open('GET', path, true);
 
-
-
 function displayMap () {
-
+  var map = new google.maps.Map(document.getElementById("map")
 }
 
 function addLayer () {
