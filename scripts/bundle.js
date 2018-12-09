@@ -308,8 +308,6 @@ var data = [
 ];
 
 // This function builds and returns a .geojson file from your friend's geopoints (getFriendsLayer)
-window.geoJSONFL = function () {
-  return GeoJSON.parse(data, {Point: ['lat', 'lng'], include: ['name']});
-};
+document.getElementById("FGeoJSON") = GeoJSON.parse(data, {Point: ['lat', 'lng'], include: ['name']});
 
 },{"geojson":1}]},{},[2]);

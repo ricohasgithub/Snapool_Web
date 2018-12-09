@@ -1,13 +1,12 @@
 
 var path = "";
 
-var geoJSONFL;
+var geoJSONFL = document.getElementById("FGeoJSON");
 
 var showParking = false;
 var showBikeways = false;
 var showSoBiHubs = false;
-
-map.data.addGeoJson(geoJSONFL);
+var showFriends = false;
 
 function addLayerToMap (type) {
   // Flip the boolean value of the path
@@ -17,6 +16,8 @@ function addLayerToMap (type) {
     showBikeways = !showBikeways;
   } else if (type === 3) {
     showSoBiHubs = !showSoBiHubs;
+  } else if (type === 4) {
+    showFriends = !showFriends;
   }
 
   if (showParking === true) {
@@ -35,6 +36,12 @@ function addLayerToMap (type) {
     // Case 3 - Add Social Bike Hubs Layer
     path = buildOpenHamSoBiHubsPath();
     map.data.loadGeoJson(path);
+  }
+
+  if (showFriends === true) {
+    // Case 4 - Show Friends on Map
+    // TODO: Set Bitmojis as points
+    map.data.addGeoJson(geoJSONFL);
   }
 
 }
