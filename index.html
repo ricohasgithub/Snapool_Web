@@ -25,6 +25,7 @@
           <script src = "scripts/main.js"> </script>
 					<link href = "styles/Style.css" rel = "stylesheet">
 					<Title> Snapool </Title>
+          <link rel = "shortcut icon" type="image/png" href="image/SnapchatGhost.png"/>
 	</Head>
 	<Body>
 
@@ -35,11 +36,11 @@
           <button class="button sq"> Snapool </button>
         </div>
 
-        
 
-        <button class="button" onclick="addLayerToMap(1);"> Show Parking </button>
+
+        <button class="button" onclick="addLayerToMap(1);"> Show Parking Spots </button>
         <button class="button" onclick="addLayerToMap(2);"> Show Bikeways </button>
-        <button class="button" onclick="addLayerToMap(3);"> Show SoBi Hubs </button>
+        <button class="button" onclick="addLayerToMap(3);"> Show Social Bike Hubs </button>
         <button class="button" onclick="addLayerToMap(4);"> Show Friends </button>
 
 				<div id = "friends"> </div>
@@ -53,13 +54,24 @@
 
         <div id = "my-login-button-target"/>
         <script>
+
+        function genTenDigitRanVal () {
+            var ranString = "";
+            for (i=0; i<10; i++) {
+              ranString += "" + Math.floor(Math.random() * 10);
+            }
+        }
+
+        var ranUserId = genTenDigitRanVal();
+
+
         window.snapKitInit = function () {
          var loginButtonIconId = 'my-login-button-target';
          // Mount Login Button
          snap.loginkit.mountButton(loginButtonIconId, {
           clientId: '6b8715d4-74b2-4f86-8c35-47c01543aefa',
-          //redirectURI: 'https://accounts.snapchat.com/accounts/oauth2/auth',
-          redirectURI: 'https://sdk.snapkit.com',
+          redirectURI: ranUserId + '://myapp',
+          // redirectURI: 'https://sdk.snapkit.com',
            scopeList: [
              'user.display_name',
              'user.bitmoji.avatar',

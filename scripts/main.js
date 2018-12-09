@@ -1,6 +1,8 @@
 
 var path = "";
 
+var scConnected = false;
+
 var geoJSONFL = document.getElementById("FGeoJSON");
 
 var showParking = false;
@@ -9,6 +11,12 @@ var showSoBiHubs = false;
 var showFriends = false;
 
 function addLayerToMap (type) {
+
+  // Check to see if the user had connected to snapchat
+  if (type === 4 && scConnected === false) {
+    window.alert("Please Connect to Snapchat First!");
+  }
+
   // Flip the boolean value of the path
   if (type === 1) {
     showParking = !showParking;
