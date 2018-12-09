@@ -4,7 +4,7 @@
   <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-firestore.js"></script>
-  
+
   <script>
   // Initialize Firebase
   var config = {
@@ -17,6 +17,9 @@
   };
   firebase.initializeApp(config);
   </script>
+
+  <!-- <script src="scripts/snapoolweb.js"></script>
+  <script src="scripts/snapoolweb.Data.js"></script> -->
 
 	<Head>
           <script src = "scripts/main.js"> </script>
@@ -50,8 +53,9 @@
          var loginButtonIconId = 'my-login-button-target';
          // Mount Login Button
          snap.loginkit.mountButton(loginButtonIconId, {
-           clientId: '6b8715d4-74b2-4f86-8c35-47c01543aefa',
-           redirectURI: 'snapool://snap-kit/auth',
+          clientId: '6b8715d4-74b2-4f86-8c35-47c01543aefa',
+           //redirectURI: 'https://accounts.snapchat.com/accounts/auth',
+          //redirectURI: 'http://localhost:5000',
            scopeList: [
              'user.display_name',
              'user.bitmoji.avatar',

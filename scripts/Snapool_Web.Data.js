@@ -1,24 +1,24 @@
 
 'use strict';
 
-snapoolweb.prototype.addUser = function(data) {
+Snapool_Web.prototype.addUser = function(data) {
   var collection = firebase.firestore().collection('user');
   return collection.add(data);
 };
 
-snapoolweb.prototype.getUser = function(id) {
+Snapool_Web.prototype.getUser = function(id) {
   return firebase.firestore().collection('user').doc(id).get();
 };
 
-snapoolweb.prototype.getUsername = function(id) {
+Snapool_Web.prototype.getUsername = function(id) {
   return firebase.firestore().collection('user').doc(id).get('username');
 };
 
-snapoolweb.prototype.getFriends = function(id) {
+Snapool_Web.prototype.getFriends = function(id) {
   return firebase.firestore().collection('user').dic(id).get('friends');
 };
 
-snapoolweb.prototype.addUsernameToUser = function(id) {
+Snapool_Web.prototype.addUsernameToUser = function(id) {
   var user = firebase.firestore().collection('user');
   user.doc().set({
     username: id
@@ -26,8 +26,7 @@ snapoolweb.prototype.addUsernameToUser = function(id) {
   });
 };
 
-snapoolweb.prototype.addUserFriends = function(id, data) {
-  var user = firebase.firestore.collection('user');
-  var document = collection.doc(id);
-
+Snapool_Web.prototype.addUserFriends = function(id, friendID) {
+  var friendsList = firebase.firestore.collection('user').doc(id).get(friends);
+  return friendsList.add();
 };
