@@ -1,4 +1,35 @@
 
+const firebase = require("firebase");
+// Required for side-effects
+require("firebase/firestore");
+
+firebase.initializeApp({
+  apiKey: 'AIzaSyA3U4uDMhOJf7e-HzAowbkV_z0ziJqzS9c',
+  authDomain: 'snapoolweb.firebaseapp.com',
+  projectId: 'snapoolweb'
+});
+
+// Initialize Cloud Firestore through Firebase
+var db = firebase.firestore();
+
+// Disable deprecated features
+db.settings({
+  timestampsInSnapshots: true
+});
+
+db.collection("users").add({
+    username: "Rico",
+    friends: ["smyung","John"],
+    hasRequest: [true, false]
+})
+.then(function(docRef) {
+    console.log("Document written with ID: ", docRef.id);
+})
+.catch(function(error) {
+    console.error("Error adding document: ", error);
+});
+
+
 var path = "";
 
 var showParking = false;
@@ -33,14 +64,6 @@ function addLayerToMap (type) {
     map.data.loadGeoJson(path);
   }
 
-}
-
-getRealTimeUpdates = function () {
-  docRef.onSnapshot(function (doc) {
-    if (doc && doc.exists) {
-      const myData = doc.data();
-    }
-  })
 }
 
 // Hamilton Open Data Path Builder for SoBi Hubs (GeoJSON)
