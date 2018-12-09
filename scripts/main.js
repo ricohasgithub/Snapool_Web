@@ -1,6 +1,8 @@
 
 var path = "";
 
+var points = 0;
+
 var FGeoJSON = {
   "type": "FeatureCollection",
   "features": [
@@ -67,6 +69,14 @@ var showParking = false;
 var showBikeways = false;
 var showSoBiHubs = false;
 var showFriends = false;
+
+function cookieC () {
+  if (points === 0) {
+    console.log('Congragulations! You have discovered the secret minigame (Woooh)!');
+  }
+    points++;
+    console.log('You have ' + points + ' points!');
+}
 
 function addLayerToMap (type) {
 
