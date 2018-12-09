@@ -43,6 +43,36 @@
             <img src = "images/SnapchatGhost.png" height = "110" width = "100">
             </center>
         </div>
+
+        <div id = "my-login-button-target"/>
+        <script>
+        window.snapKitInit = function () {
+         var loginButtonIconId = 'my-login-button-target';
+         // Mount Login Button
+         snap.loginkit.mountButton(loginButtonIconId, {
+           clientId: '6b8715d4-74b2-4f86-8c35-47c01543aefa',
+           redirectURI: '',
+           scopeList: [
+             'user.display_name',
+             'user.bitmoji.avatar',
+           ],
+           handleResponseCallback: function() {
+             snap.loginkit.fetchUserInfo()
+               .then(data => console.log('User info:', data));
+           },
+         });
+       };
+        // Load the SDK asynchronously
+        (function (d, s, id) {
+          var js, sjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "https://sdk.snapkit.com/js/v1/login.js";
+          sjs.parentNode.insertBefore(js, sjs);
+        }(document, 'script', 'loginkit-sdk'));
+
+      </script>
+
 	  </nav>
 
     <div id = "map"> </div>
@@ -57,33 +87,5 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALHXXP3dCiXonCzhlfIwhILPbpFAmfQE4&callback=initMap"
     async defer></script>
-      <!-- <div id = "my-login-button-target"/>
-      <script>
-      window.snapKitInit = function () {
-       var loginButtonIconId = 'my-login-button-target';
-       // Mount Login Button
-       snap.loginkit.mountButton(loginButtonIconId, {
-         clientId: '6b8715d4-74b2-4f86-8c35-47c01543aefa',
-         redirectURI: '',
-         scopeList: [
-           'user.display_name',
-           'user.bitmoji.avatar',
-         ],
-         handleResponseCallback: function() {
-           snap.loginkit.fetchUserInfo()
-             .then(data => console.log('User info:', data));
-         },
-       });
-     };
-      // Load the SDK asynchronously
-      (function (d, s, id) {
-        var js, sjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "https://sdk.snapkit.com/js/v1/login.js";
-        sjs.parentNode.insertBefore(js, sjs);
-      }(document, 'script', 'loginkit-sdk'));
-
-    </script> -->
 	</Body>
 </HTML>
