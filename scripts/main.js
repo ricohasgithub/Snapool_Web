@@ -1,9 +1,13 @@
 
 var path = "";
 
+var geoJSONFL;
+
 var showParking = false;
 var showBikeways = false;
 var showSoBiHubs = false;
+
+map.data.addGeoJson(geoJSONFL);
 
 function addLayerToMap (type) {
   // Flip the boolean value of the path
