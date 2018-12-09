@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "features": [
     {
-      "type": "SunY",
+      "type": "Feature",
       "properties": {},
       "geometry": {
         "type": "Point",
@@ -13,7 +13,7 @@
       }
     },
     {
-      "type": "Kevin",
+      "type": "Feature",
       "properties": {},
       "geometry": {
         "type": "Point",
@@ -24,7 +24,7 @@
       }
     },
     {
-      "type": "Alex",
+      "type": "Feature",
       "properties": {},
       "geometry": {
         "type": "Point",
@@ -35,7 +35,7 @@
       }
     },
     {
-      "type": "Sarah",
+      "type": "Feature",
       "properties": {},
       "geometry": {
         "type": "Point",
@@ -46,7 +46,7 @@
       }
     },
     {
-      "type": "Andrew",
+      "type": "Feature",
       "properties": {},
       "geometry": {
         "type": "Point",

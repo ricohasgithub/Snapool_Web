@@ -1,11 +1,11 @@
 
 var path = "";
 
-var FGroJSON = {
+var FGeoJSON = {
   "type": "FeatureCollection",
   "features": [
     {
-      "type": "SunY",
+      "type": "Feature",
       "properties": {},
       "geometry": {
         "type": "Point",
@@ -16,7 +16,7 @@ var FGroJSON = {
       }
     },
     {
-      "type": "Kevin",
+      "type": "Feature",
       "properties": {},
       "geometry": {
         "type": "Point",
@@ -27,7 +27,7 @@ var FGroJSON = {
       }
     },
     {
-      "type": "Alex",
+      "type": "Feature",
       "properties": {},
       "geometry": {
         "type": "Point",
@@ -38,7 +38,7 @@ var FGroJSON = {
       }
     },
     {
-      "type": "Sarah",
+      "type": "Feature",
       "properties": {},
       "geometry": {
         "type": "Point",
@@ -49,7 +49,7 @@ var FGroJSON = {
       }
     },
     {
-      "type": "Andrew",
+      "type": "Feature",
       "properties": {},
       "geometry": {
         "type": "Point",
@@ -82,8 +82,8 @@ function addLayerToMap (type) {
     showBikeways = !showBikeways;
   } else if (type === 3) {
     showSoBiHubs = !showSoBiHubs;
-  // } else if (type === 4) {
-  //   showFriends = !showFriends;
+  } else if (type === 4) {
+    showFriends = !showFriends;
   }
 
   if (showParking === true) {
@@ -108,6 +108,7 @@ function addLayerToMap (type) {
     // Case 4 - Show Friends on Map
     // TODO: Set Bitmojis as points
     map.data.addGeoJson(FGeoJSON);
+    map.data.setStyle();
   }
 
 }
