@@ -37,6 +37,10 @@ function addLayerToMap (type) {
 
 }
 
+function  () {
+
+}
+
 // Hamilton Open Data Path Builder for SoBi Hubs (GeoJSON)
 function buildOpenHamSoBiHubsPath () {
   return "https://opendata.arcgis.com/datasets/b5fb1c2cbccc4513ad4cac3671905ccc_18.geojson";
